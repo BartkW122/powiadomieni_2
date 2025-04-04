@@ -14,17 +14,20 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#B9D05B"
         android:text="BigTextStyle" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#5B7129"
         android:text="BigPictureStyle" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D75151"
         android:text="InboxStyle" />
 </LinearLayout>
