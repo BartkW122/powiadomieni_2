@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         createNotificationChannel();
         btn1.setOnClickListener(view -> BigTextStyle() );
-        btn2.setOnClickListener(view -> BigTextStyle() );
+        btn2.setOnClickListener(view -> BigPictureStyle() );
         btn3.setOnClickListener(view ->InboxStyle());
     }
     private void createNotificationChannel(){
@@ -51,14 +51,15 @@ public class MainActivity extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
     }
-    private  void  BigTextStyle(){
+
+    private  void  BigTextStyle() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 1);
                 return;
             }
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setContentTitle("BigTextStyle").setStyle(new NotificationCompat.BigTextStyle().bigText("cewrewrwerwerwevsmvdflkvndfvndfvnjdfnbjdbnldbnlfgbnlfgbnlfgnblfbfnbdfbgdfnbdfngbjbdfgnbjldfbnjdfbn")).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
-            NotificationManagerCompat notificationM= NotificationManagerCompat.from(this);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setSmallIcon(R.drawable.dice1).setContentTitle("BigTextStyle").setStyle(new NotificationCompat.BigTextStyle().bigText("vsdvsdvlasbvhsdbfvsdfbvukhsdfukvhsdufvhusdvhusvfhuisdvhusvhuksvhuksvfhusvhusdvhuilsdvhldf")).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
+            NotificationManagerCompat notificationM = NotificationManagerCompat.from(this);
             notificationM.notify(1,builder.build());
 
         }
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.dice1);
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setSmallIcon(R.drawable.dice1).setContentTitle("BigPictureStyle").setStyle(new NotificationCompat.BigPictureStyle().bigLargeIcon(bitmap)).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setSmallIcon(R.drawable.dice1).setContentTitle("BigPictureStyle").setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap)).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
             NotificationManagerCompat notificationM= NotificationManagerCompat.from(this);
             notificationM.notify(1,builder.build());
 
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setSmallIcon(R.drawable.dice1).setContentTitle("InboxStyle").setStyle(new NotificationCompat.InboxStyle().addLine("linia 1").addLine("Linia 2").addLine("Linia 3")).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,Channel_ID).setSmallIcon(R.drawable.dice1).setContentTitle("InboxStyle").setStyle(new NotificationCompat.InboxStyle().addLine("Linia 1").addLine("Linia 2").addLine("Linia 3")).setPriority(NotificationCompat.PRIORITY_DEFAULT).setAutoCancel(true);
             NotificationManagerCompat notificationM= NotificationManagerCompat.from(this);
             notificationM.notify(1,builder.build());
 
